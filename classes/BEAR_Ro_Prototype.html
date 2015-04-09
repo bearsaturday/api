@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">205</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-728529020"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-728529020" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/BEAR_Agent_Adapter_Interface.html">BEAR_Agent_Adapter_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_After_Interface.html">BEAR_Aspect_After_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Around_Interface.html">BEAR_Aspect_Around_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Before_Interface.html">BEAR_Aspect_Before_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Returning_Interface.html">BEAR_Aspect_Returning_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Throwing_Interface.html">BEAR_Aspect_Throwing_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Base_Interface.html">BEAR_Base_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Form_Token_Interface.html">BEAR_Form_Token_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Injector_Interface.html">BEAR_Injector_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Page_Header_Interface.html">BEAR_Page_Header_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Query_Interface.html">BEAR_Query_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Resource_Request_Interface.html">BEAR_Resource_Request_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Interface.html">BEAR_Ro_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Shutdown_Interface.html">BEAR_Ro_Shutdown_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_View_Interface.html">BEAR_View_Interface</a></li>
+                                                                                                    <li class="class"><a href="../classes/BEAR_Agent.html">BEAR_Agent</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter.html">BEAR_Agent_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Android.html">BEAR_Agent_Adapter_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Default.html">BEAR_Agent_Adapter_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Docomo.html">BEAR_Agent_Adapter_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ezweb.html">BEAR_Agent_Adapter_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ipad.html">BEAR_Agent_Adapter_Ipad</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Iphone.html">BEAR_Agent_Adapter_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile.html">BEAR_Agent_Adapter_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile_Exception.html">BEAR_Agent_Adapter_Mobile_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Softbank.html">BEAR_Agent_Adapter_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Exception.html">BEAR_Agent_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Injector.html">BEAR_Agent_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Mobile.html">BEAR_Agent_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Ua.html">BEAR_Agent_Ua</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation.html">BEAR_Annotation</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation_Exception.html">BEAR_Annotation_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect.html">BEAR_Aspect</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Exception.html">BEAR_Aspect_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_JoinPoint.html">BEAR_Aspect_JoinPoint</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver.html">BEAR_Aspect_Weaver</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver_Exception.html">BEAR_Aspect_Weaver_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Base.html">BEAR_Base</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Bin_Bear.html">BEAR_Bin_Bear</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache.html">BEAR_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter.html">BEAR_Cache_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Apc.html">BEAR_Cache_Adapter_Apc</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Lite.html">BEAR_Cache_Adapter_Lite</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Memcache.html">BEAR_Cache_Adapter_Memcache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Void.html">BEAR_Cache_Adapter_Void</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Exception.html">BEAR_Cache_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji.html">BEAR_Emoji</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji_Map.html">BEAR_Emoji_Map</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Exception.html">BEAR_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Factory.html">BEAR_Factory</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form.html">BEAR_Form</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Exception.html">BEAR_Form_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Android.html">BEAR_Form_Renderer_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Default.html">BEAR_Form_Renderer_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Docomo.html">BEAR_Form_Renderer_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Ezweb.html">BEAR_Form_Renderer_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Iphone.html">BEAR_Form_Renderer_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Mobile.html">BEAR_Form_Renderer_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Softbank.html">BEAR_Form_Renderer_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Token.html">BEAR_Form_Token</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img.html">BEAR_Img</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter.html">BEAR_Img_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo.html">BEAR_Img_Adapter_Cairo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo_Exception.html">BEAR_Img_Adapter_Cairo_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD.html">BEAR_Img_Adapter_GD</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD_Exception.html">BEAR_Img_Adapter_GD_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick.html">BEAR_Img_Adapter_Magick</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick_Exception.html">BEAR_Img_Adapter_Magick_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Exception.html">BEAR_Img_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log.html">BEAR_Log</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log_Test.html">BEAR_Log_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main.html">BEAR_Main</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Exception.html">BEAR_Main_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Ua_Injector.html">BEAR_Main_Ua_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2.html">BEAR_Mdb2</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2_Exception.html">BEAR_Mdb2_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page.html">BEAR_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Ajax.html">BEAR_Page_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Cli.html">BEAR_Page_Cli</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Exception.html">BEAR_Page_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Header.html">BEAR_Page_Header</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Pager.html">BEAR_Pager</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Prof.html">BEAR_Prof</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query.html">BEAR_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query_Count.html">BEAR_Query_Count</a></li>
+                                                    <li class="class"><a href="../classes/Bear_Query_Free.html">Bear_Query_Free</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource.html">BEAR_Resource</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Exception.html">BEAR_Resource_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute.html">BEAR_Resource_Execute</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Adapter.html">BEAR_Resource_Execute_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Exception.html">BEAR_Resource_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_File.html">BEAR_Resource_Execute_File</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Function.html">BEAR_Resource_Execute_Function</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Http.html">BEAR_Resource_Execute_Http</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Mock.html">BEAR_Resource_Execute_Mock</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Null.html">BEAR_Resource_Execute_Null</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Page.html">BEAR_Resource_Execute_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Ro.html">BEAR_Resource_Execute_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request.html">BEAR_Resource_Request</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Ajax.html">BEAR_Resource_Request_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Cache.html">BEAR_Resource_Request_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Exception.html">BEAR_Resource_Request_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Test.html">BEAR_Resource_Request_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server.html">BEAR_Resource_Server</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Client.html">BEAR_Resource_Server_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Execute_Exception.html">BEAR_Resource_Server_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Handler.html">BEAR_Resource_Server_Handler</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro.html">BEAR_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Container.html">BEAR_Ro_Container</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Debug.html">BEAR_Ro_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Exception.html">BEAR_Ro_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype.html">BEAR_Ro_Prototype</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Debug.html">BEAR_Ro_Prototype_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link.html">BEAR_Ro_Prototype_Link</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link_Exception.html">BEAR_Ro_Prototype_Link_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Shutdown.html">BEAR_Ro_Shutdown</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Session.html">BEAR_Session</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty.html">BEAR_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty_Exception.html">BEAR_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Client.html">BEAR_Test_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Query.html">BEAR_Test_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Util.html">BEAR_Util</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View.html">BEAR_View</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter.html">BEAR_View_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Php.html">BEAR_View_Adapter_Php</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty.html">BEAR_View_Adapter_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty_Exception.html">BEAR_View_Adapter_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bcheckbox.html">HTML_QuickForm_bcheckbox</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bradio.html">HTML_QuickForm_bradio</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>BEAR_Ro_Prototype</h1>
+                    <p><em>リソースプロトタイプ</em></p>
+                    <p>リソースのリクエストです。
+リソースプロトタイプがリソースをどのように実行するかを保持し、実行されリソースリクエスト結果が得られます。</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Ro.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_onInject" class="">onInject()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_onCreate" class="">onCreate()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_onRead" class="">onRead()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_onUpdate" class="">onUpdate()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_onDelete" class="">onDelete()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_onLink" class="">onLink()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_assert" class="">assert()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_assertRequired" class="deprecated">assertRequired()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getBody" class="">getBody()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getHeaders" class="">getHeaders()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getHeader" class="">getHeader()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getLinks" class="">getLinks()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setBody" class="">setBody()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setHtml" class="">setHtml()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setHeader" class="">setHeader()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setHeaders" class="">setHeaders()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setLink" class="">setLink()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setLinks" class="">setLinks()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setCode" class="">setCode()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getCode" class="">getCode()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_toString" class="">toString()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method___toString" class="">__toString()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method___invoke" class="">__invoke()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_outputHttp" class="">outputHttp()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getIterator" class="">getIterator()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getIterator1" class="">getIterator1()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_count" class="">count()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_set" class="">set()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setConfig" class="">setConfig()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getConfig" class="">getConfig()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_setService" class="">setService()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getRo" class="">getRo()</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#method_getHtml" class="">getHtml()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_pop" class="">pop()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_popAll" class="">popAll()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_countStack" class="">countStack()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_link" class="">link()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_request" class="">request()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getValue" class="">getValue()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_requestOnShutdown" class="">requestOnShutdown()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_hasChainLink" class="">hasChainLink()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getLinkedBody" class="">getLinkedBody()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_getSetOption" class="">getSetOption()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method_p" class="">p()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Ro.html#constant_CODE_OK" class="">CODE_OK</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#constant_CODE_BAD_REQUEST" class="">CODE_BAD_REQUEST</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#constant_CODE_ERROR" class="">CODE_ERROR</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#constant_CONFIG_PAGER" class="">CONFIG_PAGER</a><br />
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Ro.html#method__exception" class="">_exception()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method__doRequest" class="">_doRequest()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method__setHtml" class="">_setHtml()</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#method__getHtml" class="">_getHtml()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Ro.html#property__config" class="">$_config</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#property__stack" class="">$_stack</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#property__chainLink" class="">$_chainLink</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#property__prototypeLink" class="">$_prototypeLink</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#property__setOption" class="">$_setOption</a><br />
+                                                                    <a href="../classes/BEAR_Ro_Prototype.html#property__ro" class="">$_ro</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Ro.html#property__body" class="">$_body</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#property__headers" class="">$_headers</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#property__links" class="">$_links</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#property__html" class="">$_html</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#property__code" class="">$_code</a><br />
+                                                                    <a href="../classes/BEAR_Ro.html#property__page" class="">$_page</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Ro.Prototype.html"><div class="path-wrapper">Ro/Prototype.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">BEAR_Ro\Prototype</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                        <div class="namespace-wrapper">\ArrayObject</div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/BEAR_Ro.html">\BEAR_Ro</a></div>
+                                                                                                    <div class="namespace-wrapper">\BEAR_Ro_Prototype</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                    <dd><a href="http://www.bear-project.net/"><div class="namespace-wrapper">http://www.bear-project.net/</div></a></dd>
+                                                    
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                category
+                            </th>
+                            <td>
+                                                                    <p>BEAR</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Akihito Koriyama <a href="mailto:koriyama@bear-project.net">koriyama@bear-project.net</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2008-2011 Akihito Koriyama  All rights reserved.</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="http://opensource.org/licenses/bsd-license.php">http://opensource.org/licenses/bsd-license.php</a> BSD</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                                                    <p>SVN: Release: @package_version@ $Id:$</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                                    <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CODE_OK" name="constant_CODE_OK" class="anchor"></a>
+            <article id="constant_CODE_OK" class="constant">
+                <h3 class="">CODE_OK</h3>
+                <pre class="signature">CODE_OK</pre>
+                <p><em>コード OK</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CODE_BAD_REQUEST" name="constant_CODE_BAD_REQUEST" class="anchor"></a>
+            <article id="constant_CODE_BAD_REQUEST" class="constant">
+                <h3 class="">CODE_BAD_REQUEST</h3>
+                <pre class="signature">CODE_BAD_REQUEST</pre>
+                <p><em>コード Bad Request</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CODE_ERROR" name="constant_CODE_ERROR" class="anchor"></a>
+            <article id="constant_CODE_ERROR" class="constant">
+                <h3 class="">CODE_ERROR</h3>
+                <pre class="signature">CODE_ERROR</pre>
+                <p><em>コード　Internal Error</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONFIG_PAGER" name="constant_CONFIG_PAGER" class="anchor"></a>
+            <article id="constant_CONFIG_PAGER" class="constant">
+                <h3 class="">CONFIG_PAGER</h3>
+                <pre class="signature">CONFIG_PAGER</pre>
+                <p><em>set() configキー</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__config" name="property__config" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_config</h3>
+                <pre class="signature">$_config : array</pre>
+                <p><em>コンフィグ</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__stack" name="property__stack" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_stack</h3>
+                <pre class="signature">$_stack : string</pre>
+                <p><em>リソースプロトタイプスタック</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__chainLink" name="property__chainLink" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_chainLink</h3>
+                <pre class="signature">$_chainLink : array</pre>
+                <p><em>リソースリンク</em></p>
+                <pre>
+フォーマット
+
+$_chainLink[] = array('link1');
+$_chainLink[] = array('link2', 'link3');
+</pre>
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__prototypeLink" name="property__prototypeLink" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_prototypeLink</h3>
+                <pre class="signature">$_prototypeLink : mixed</pre>
+                <p><em>BEAR_Ro_Prototype_Link</em></p>
+                
+
+                                <h4>Type</h4>
+                mixed
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__setOption" name="property__setOption" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_setOption</h3>
+                <pre class="signature">$_setOption : array</pre>
+                <p><em>setオプション</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ro" name="property__ro" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ro</h3>
+                <pre class="signature">$_ro : \BEAR_Ro</pre>
+                <p><em>取得したRo</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__body" name="property__body" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_body</h3>
+                <pre class="signature">$_body : mixed</pre>
+                <p><em>ボディ</em></p>
+                
+
+                                <h4>Type</h4>
+                mixed
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__headers" name="property__headers" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_headers</h3>
+                <pre class="signature">$_headers : array</pre>
+                <p><em>メタ情報</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__links" name="property__links" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_links</h3>
+                <pre class="signature">$_links : array</pre>
+                <p><em>リンク情報</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__html" name="property__html" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_html</h3>
+                <pre class="signature">$_html : string</pre>
+                <p><em>HTML（文字列）</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__code" name="property__code" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_code</h3>
+                <pre class="signature">$_code : integer</pre>
+                <p><em>状態コード</em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; BEAR::CODE_OK | BEAR::CODE_BAD_REQUEST | BEAR::CODE_ERROR                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__page" name="property__page" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_page</h3>
+                <pre class="signature">$_page : mixed</pre>
+                <p><em>ページ</em></p>
+                <p>デフォルトではレジストリのpage(カレントのページ）</p>
+
+                                <h4>Type</h4>
+                mixed
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$config</span>) </pre>
+                <p><em>Constructor</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onInject" name="method_onInject" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onInject()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onInject() : void</pre>
+                <p><em>Inject</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onCreate" name="method_onCreate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onCreate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onCreate(array  <span class="argument">$values</span>) : mixed</pre>
+                <p><em>リソース作成</em></p>
+                <p>リソースを作成します。このメソッドはキャッシュオプションが使えます。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>引数</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onRead" name="method_onRead" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onRead()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onRead(array  <span class="argument">$values</span>) : mixed</pre>
+                <p><em>リソース読み込み</em></p>
+                <p>オプションにcacheが使えます</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>引数</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onUpdate" name="method_onUpdate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onUpdate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onUpdate(array  <span class="argument">$values</span>) : mixed</pre>
+                <p><em>リソース変更</em></p>
+                <p>リソースを変更します。このメソッドはPOEオプション
+（一度だけ実行する）オプションが使えます。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>引数</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onDelete" name="method_onDelete" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onDelete()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onDelete(array  <span class="argument">$values</span>) : mixed</pre>
+                <p><em>リソース消去</em></p>
+                <p>リソースを消去します。このメソッドはPOEオプション
+（一度だけ実行する）オプションが使えます。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>引数</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onLink" name="method_onLink" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onLink()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onLink(array  <span class="argument">$values</span>) : array</pre>
+                <p><em>リンク</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_assert" name="method_assert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">assert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">assert(boolean  <span class="argument">$bool</span>, string  <span class="argument">$msg = &#039;Bad Resource Request (assert)&#039;</span>) : void</pre>
+                <p><em>シンプルアサーション</em></p>
+                <pre>
+単純なboolean値を引数にしてfalseの時は例外を投げ、
+リソースの結果は400エラー(Bad Request)のリソースオブジェクト(BEAR_Roオブジェクト)になります。
+onRead, onCreateなどCRUDメソッドに値が正しく渡されているか確認するために使用します。
+再利用のためにAOPアドバイスですることも検討してください。
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$bool </td>
+                                <td><p>条件</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$msg </td>
+                                <td><p>エラー例外のinfo</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_assertRequired" name="method_assertRequired" class="anchor"></a>
+            <article class="method">
+                <h3 class="public deprecated">assertRequired()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">assertRequired(array  <span class="argument">$keys</span>, array  <span class="argument">$values</span>) : void</pre>
+                <p><em>必須項目アサーション</em></p>
+                <pre>
+連想配列に指定のキー配列が全て含まれてるか検査し、問題があれば例外を投げます。
+リソースの結果は400エラー(Bad Request)のリソースオブジェクト(BEAR_Roオブジェクト)になります。
+onRead, onCreateなどCRUDメソッドに値が正しく渡されているか確認するために使用します。
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$keys </td>
+                                <td><p>必須キー配列</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>テストする配列</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\BEAR_Exception</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated</h4>
+                    @requierdを用います。
+                </aside>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBody" name="method_getBody" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBody()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBody(boolean  <span class="argument">$link = false</span>) : array|mixed</pre>
+                <p><em>リソースボディを取得</em></p>
+                <p>リソースリクエストを行いその結果のボディを返します。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$link </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array|mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHeaders" name="method_getHeaders" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHeaders()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHeaders() : array</pre>
+                <p><em>リソースヘッダーを取得（リスト)</em></p>
+                <p>リソースリクエストを行いその結果のヘッダーを返します。</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHeader" name="method_getHeader" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHeader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHeader(  <span class="argument">$headerKey</span>) : null</pre>
+                <p><em>リソースヘッダーを取得（アイテム)</em></p>
+                <p>リソースリクエストを行いその結果のヘッダーを返します。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$headerKey </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLinks" name="method_getLinks" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLinks()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLinks() : array</pre>
+                <p><em>リソースリンクの取得</em></p>
+                <p>リソースのリンクを取得します。</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBody" name="method_setBody" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBody()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBody(mixed  <span class="argument">$body</span>) : \BEAR_Ro</pre>
+                <p><em>リソースボディをセット</em></p>
+                <p>リソースのボディ（リソース結果）をセットします。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$body </td>
+                                <td><p>ボディ</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setHtml" name="method_setHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setHtml(  <span class="argument">$html</span>) : \BEAR_Ro</pre>
+                <p><em>リソースHTMLの指定</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$html </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setHeader" name="method_setHeader" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setHeader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setHeader(string  <span class="argument">$key</span>, string  <span class="argument">$header</span>) : \BEAR_Ro</pre>
+                <p><em>リソースヘッダーセット</em></p>
+                <pre>
+キーを指定してリソースヘッダーをセットします。
+予約済みキーはこのクラスのconstとして定義されています。
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>ヘッダーキー</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$header </td>
+                                <td><p>ヘッダー</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setHeaders" name="method_setHeaders" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setHeaders()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setHeaders(array  <span class="argument">$headers</span>) : \BEAR_Ro</pre>
+                <p><em>ヘッダーのセット</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$headers </td>
+                                <td><p>ヘッダー配列</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLink" name="method_setLink" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setLink()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLink(string  <span class="argument">$key</span>, string  <span class="argument">$link</span>) : \BEAR_Ro</pre>
+                <p><em>リンクのセット</em></p>
+                <pre>
+リソースリンクをセットします。
+予約済みキーはこのクラスのconstとして定義されています。
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>リンクキー</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$link </td>
+                                <td><p>リンク</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLinks" name="method_setLinks" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setLinks()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLinks(array  <span class="argument">$links</span>) : \BEAR_Ro</pre>
+                <p><em>リンクをセット</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$links </td>
+                                <td><p>リンク</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCode" name="method_setCode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCode(integer  <span class="argument">$code</span>) : \BEAR_Ro</pre>
+                <p><em>状態コード設定</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$code </td>
+                                <td><p>コード</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCode" name="method_getCode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCode() : integer</pre>
+                <p><em>コードの取得</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>(200|400|500)</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_toString" name="method_toString" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">toString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">toString() : string</pre>
+                <p><em>リソースの文字列化</em></p>
+                <pre>
+変数状態のリソース(body)にテンプレートを適用して文字列化します。
+テンプレート指定がない場合、スカラー値ならそのまま、スカラー値でないなら''になります。
+プロトタイプリソース（リクエストをまだ行っていないリソース）の場合は実リクエストを行った後に文字列化を行います。
+このメソッドはRoクラスのマジックメソッドとして機能します。
+</pre>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___toString" name="method___toString" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__toString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__toString() : string</pre>
+                <p><em>マジックメソッド - 文字列化</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___invoke" name="method___invoke" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__invoke()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__invoke(array  <span class="argument">$values</span>) : mixed</pre>
+                <p><em>関数としての振る舞い</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_outputHttp" name="method_outputHttp" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">outputHttp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">outputHttp() : void</pre>
+                <p><em>HTTP出力</em></p>
+                <pre>
+BEAR_RoリソースオブジェクトをHTTP出力します。
+_codeプロパティがレスポンスコード、_header配列プロパティのうち
+文字列のものがHTTPヘッダー,_bodyプロパティがHTTPボディとして出力されます。
+</pre>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIterator" name="method_getIterator" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIterator()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIterator() : \IteratorAggregate</pre>
+                <p><em>イテレーター</em></p>
+                <p>optionsで指定したイテレーター、もしくはdefaultのArrayIteratorが使用されます</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    \IteratorAggregate
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getIterator1" name="method_getIterator1" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getIterator1()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getIterator1() : \Traversable</pre>
+                <p><em>Create a new iterator from an ArrayObject instance</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Traversable
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_count" name="method_count" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">count()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">count() : integer</pre>
+                <p><em>count取得</em></p>
+                <p>arrayとして振舞うための実装です。</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_set" name="method_set" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">set()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">set(string  <span class="argument">$key = null</span>, string  <span class="argument">$setOption = &#039;value&#039;</span>) : \BEAR_Ro_Prototype</pre>
+                <p><em>リソースセット</em></p>
+                <p>プロトタイプリソースをpageにsetします。$setOptionsでセットのオプションを指定します。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>リソースキー</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$setOption </td>
+                                <td><p>セットオプション</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro_Prototype.html">\BEAR_Ro_Prototype</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setConfig" name="method_setConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setConfig(mixed  <span class="argument">$config</span>, mixed  <span class="argument">$values = null</span>) : \BEAR_Ro</pre>
+                <p><em>Set config</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$config </td>
+                                <td><p>(string) コンフィグキー | (array) コンフィグ配列</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$values </td>
+                                <td><p>(string) $configの時のコンフィグ値</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConfig" name="method_getConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConfig(null  <span class="argument">$key = null</span>) : array|mixed</pre>
+                <p><em>コンフィグ取得</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>null</td>
+                                <td>$key </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array|mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setService" name="method_setService" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setService()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setService(string  <span class="argument">$name</span>, object  <span class="argument">$service</span>) : void</pre>
+                <p><em>サービスセット</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>プロパティ</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>object</td>
+                                <td>$service </td>
+                                <td><p>サービス</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRo" name="method_getRo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRo() : \BEAR_Ro</pre>
+                <p><em>Ro取得</em></p>
+                <p>link()がついてるリソースでもgetRo()で取得されるのは最初のリソースです。</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHtml" name="method_getHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHtml() : string</pre>
+                <p><em>HTML取得</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_pop" name="method_pop" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">pop()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">pop() : array</pre>
+                <p><em>スタックされたRoプロトタイプを１つ取り出す</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_popAll" name="method_popAll" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">popAll()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">popAll() : array</pre>
+                <p><em>スタックされたRoプロトタイプを全て取り出す</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_countStack" name="method_countStack" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">countStack()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">countStack() : integer</pre>
+                <p><em>Roプロトタイプのスタックの数の取得</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_link" name="method_link" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">link()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">link(mixed  <span class="argument">$link</span>) : \BEAR_Ro_Prototype</pre>
+                <p><em>リソースリンクを取得</em></p>
+                <p>リソースのリンクを取得します。
+リンクはリンクキーをキーにリンクURIを値にした配列をROリソースの中のonLinkメソッドで返す事で実現できます。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$link </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro_Prototype.html">\BEAR_Ro_Prototype</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_request" name="method_request" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">request()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">request() : \BEAR_Ro</pre>
+                <p><em>リソースリクエスト実行</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getValue" name="method_getValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getValue() : mixed</pre>
+                <p><em>値を取得</em></p>
+                <p>リソースリクエストを行いテンプレートオプションが適用した文字列が、
+そうでなければリソースボディを返します。</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_requestOnShutdown" name="method_requestOnShutdown" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">requestOnShutdown()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">requestOnShutdown() : \BEAR_Ro</pre>
+                <p><em>リソースリクエストをshutdown時に実行</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_hasChainLink" name="method_hasChainLink" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">hasChainLink()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">hasChainLink() : boolean</pre>
+                <p><em>リンクを持つか</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLinkedBody" name="method_getLinkedBody" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLinkedBody()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLinkedBody() : array</pre>
+                <p><em>リンクされたbody配列を取得</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSetOption" name="method_getSetOption" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSetOption()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSetOption() : string</pre>
+                <p><em>setオプションの取得</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            var
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_p" name="method_p" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">p()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">p() : \BEAR_Ro</pre>
+                <p><em>デバック表示</em></p>
+                <p><code>
+$resource-&gt;$read($params)-&gt;p();
+$resource-&gt;$read($params)-&gt;set('user')-&gt;p();
+</code></p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__exception" name="method__exception" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_exception()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_exception(string  <span class="argument">$msg</span>, array  <span class="argument">$config</span>) : \Exception</pre>
+                <p><em>例外の作成</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$msg </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Exception
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Ro.html"><div class="path-wrapper">\BEAR_Ro</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__doRequest" name="method__doRequest" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_doRequest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_doRequest() : void</pre>
+                <p><em>リソースリクエスト実行</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__setHtml" name="method__setHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_setHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_setHtml(  <span class="argument">$isLinked</span>) </pre>
+                <p><em>リソーステンプレートをRoにセット</em></p>
+                <p>リクエストにテンプレートオプションが指定されているとHTML等文字列化してRoに保持します。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$isLinked </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                                                            <p>リソースボディのキャッシュはUA共通に</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__getHtml" name="method__getHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_getHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_getHtml(mixed  <span class="argument">$body</span>) : string</pre>
+                <p><em>リソーステンプレートに適用さたHTML文字列を取得</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$body </td>
+                                <td><p>リソースボディ</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Prototype.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Ro/Prototype.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 9th, 2015 at 16:05.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

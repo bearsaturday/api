@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">205</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1137118398"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1137118398" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/BEAR_Agent_Adapter_Interface.html">BEAR_Agent_Adapter_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_After_Interface.html">BEAR_Aspect_After_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Around_Interface.html">BEAR_Aspect_Around_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Before_Interface.html">BEAR_Aspect_Before_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Returning_Interface.html">BEAR_Aspect_Returning_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Throwing_Interface.html">BEAR_Aspect_Throwing_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Base_Interface.html">BEAR_Base_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Form_Token_Interface.html">BEAR_Form_Token_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Injector_Interface.html">BEAR_Injector_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Page_Header_Interface.html">BEAR_Page_Header_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Query_Interface.html">BEAR_Query_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Resource_Request_Interface.html">BEAR_Resource_Request_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Interface.html">BEAR_Ro_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Shutdown_Interface.html">BEAR_Ro_Shutdown_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_View_Interface.html">BEAR_View_Interface</a></li>
+                                                                                                    <li class="class"><a href="../classes/BEAR_Agent.html">BEAR_Agent</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter.html">BEAR_Agent_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Android.html">BEAR_Agent_Adapter_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Default.html">BEAR_Agent_Adapter_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Docomo.html">BEAR_Agent_Adapter_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ezweb.html">BEAR_Agent_Adapter_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ipad.html">BEAR_Agent_Adapter_Ipad</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Iphone.html">BEAR_Agent_Adapter_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile.html">BEAR_Agent_Adapter_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile_Exception.html">BEAR_Agent_Adapter_Mobile_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Softbank.html">BEAR_Agent_Adapter_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Exception.html">BEAR_Agent_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Injector.html">BEAR_Agent_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Mobile.html">BEAR_Agent_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Ua.html">BEAR_Agent_Ua</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation.html">BEAR_Annotation</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation_Exception.html">BEAR_Annotation_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect.html">BEAR_Aspect</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Exception.html">BEAR_Aspect_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_JoinPoint.html">BEAR_Aspect_JoinPoint</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver.html">BEAR_Aspect_Weaver</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver_Exception.html">BEAR_Aspect_Weaver_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Base.html">BEAR_Base</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Bin_Bear.html">BEAR_Bin_Bear</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache.html">BEAR_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter.html">BEAR_Cache_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Apc.html">BEAR_Cache_Adapter_Apc</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Lite.html">BEAR_Cache_Adapter_Lite</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Memcache.html">BEAR_Cache_Adapter_Memcache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Void.html">BEAR_Cache_Adapter_Void</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Exception.html">BEAR_Cache_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji.html">BEAR_Emoji</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji_Map.html">BEAR_Emoji_Map</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Exception.html">BEAR_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Factory.html">BEAR_Factory</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form.html">BEAR_Form</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Exception.html">BEAR_Form_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Android.html">BEAR_Form_Renderer_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Default.html">BEAR_Form_Renderer_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Docomo.html">BEAR_Form_Renderer_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Ezweb.html">BEAR_Form_Renderer_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Iphone.html">BEAR_Form_Renderer_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Mobile.html">BEAR_Form_Renderer_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Softbank.html">BEAR_Form_Renderer_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Token.html">BEAR_Form_Token</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img.html">BEAR_Img</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter.html">BEAR_Img_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo.html">BEAR_Img_Adapter_Cairo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo_Exception.html">BEAR_Img_Adapter_Cairo_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD.html">BEAR_Img_Adapter_GD</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD_Exception.html">BEAR_Img_Adapter_GD_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick.html">BEAR_Img_Adapter_Magick</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick_Exception.html">BEAR_Img_Adapter_Magick_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Exception.html">BEAR_Img_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log.html">BEAR_Log</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log_Test.html">BEAR_Log_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main.html">BEAR_Main</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Exception.html">BEAR_Main_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Ua_Injector.html">BEAR_Main_Ua_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2.html">BEAR_Mdb2</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2_Exception.html">BEAR_Mdb2_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page.html">BEAR_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Ajax.html">BEAR_Page_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Cli.html">BEAR_Page_Cli</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Exception.html">BEAR_Page_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Header.html">BEAR_Page_Header</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Pager.html">BEAR_Pager</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Prof.html">BEAR_Prof</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query.html">BEAR_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query_Count.html">BEAR_Query_Count</a></li>
+                                                    <li class="class"><a href="../classes/Bear_Query_Free.html">Bear_Query_Free</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource.html">BEAR_Resource</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Exception.html">BEAR_Resource_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute.html">BEAR_Resource_Execute</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Adapter.html">BEAR_Resource_Execute_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Exception.html">BEAR_Resource_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_File.html">BEAR_Resource_Execute_File</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Function.html">BEAR_Resource_Execute_Function</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Http.html">BEAR_Resource_Execute_Http</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Mock.html">BEAR_Resource_Execute_Mock</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Null.html">BEAR_Resource_Execute_Null</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Page.html">BEAR_Resource_Execute_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Ro.html">BEAR_Resource_Execute_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request.html">BEAR_Resource_Request</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Ajax.html">BEAR_Resource_Request_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Cache.html">BEAR_Resource_Request_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Exception.html">BEAR_Resource_Request_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Test.html">BEAR_Resource_Request_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server.html">BEAR_Resource_Server</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Client.html">BEAR_Resource_Server_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Execute_Exception.html">BEAR_Resource_Server_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Handler.html">BEAR_Resource_Server_Handler</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro.html">BEAR_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Container.html">BEAR_Ro_Container</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Debug.html">BEAR_Ro_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Exception.html">BEAR_Ro_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype.html">BEAR_Ro_Prototype</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Debug.html">BEAR_Ro_Prototype_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link.html">BEAR_Ro_Prototype_Link</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link_Exception.html">BEAR_Ro_Prototype_Link_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Shutdown.html">BEAR_Ro_Shutdown</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Session.html">BEAR_Session</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty.html">BEAR_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty_Exception.html">BEAR_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Client.html">BEAR_Test_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Query.html">BEAR_Test_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Util.html">BEAR_Util</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View.html">BEAR_View</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter.html">BEAR_View_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Php.html">BEAR_View_Adapter_Php</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty.html">BEAR_View_Adapter_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty_Exception.html">BEAR_View_Adapter_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bcheckbox.html">HTML_QuickForm_bcheckbox</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bradio.html">HTML_QuickForm_bradio</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>BEAR_Query</h1>
+                    <p><em>クエリークラス</em></p>
+                    <pre>
+select, insert, update, deleteのクエリーツールです。
+selectにはHTMLリンクも伴うDBページング機能、他の文にはSQL生成の機能が付加されています。
+MDB2を使用していますが、クライアントはMDB2の実装に依存しないでBEAR_Queryのインターフェイスに依存できます。
+</pre>
+<p>Example 1. セレクトクエリー</p>
+<p></pre>
+<code>
+$config = array('db'=&gt;$db, 'table'=&gt;$table, 'pager'=&gt;false, 'pager_option'=&gt; $pagerOption);
+$query = BEAR_Dependency('BEAR_Query, $config);
+// 直接select
+$sql = &quot;SELECT <em> FROM users WHERE id = 1&quot;;
+$result = $query-&gt;select($sql);
+// プリペアードステートメント (quote自動）
+$sql = &quot;SELECT </em> FROM users WHERE id = :id&quot;;
+$params = array('id'=&gt;1);
+$result = $query-&gt;select($sql, $params);
+// insert
+$values = array('name'=&gt;'bear', 'age'=&gt;10);
+$result = $query-&gt;insert($values);
+// update
+$values = array('name'=&gt;'bear', 'age'=&gt;10);
+$where = 'id = '. $query-&gt;quote($id, 'integer');
+$result = $query-&gt;$update($values, $where);
+// テーブル指定update
+$table = 'another_user';
+$result = $query-&gt;$update($values, $where, $table);
+</code></p>
+<pre>
+MDB2結果コード
+
+('MDB2_OK',                      true);
+('MDB2_ERROR',                     -1);
+('MDB2_ERROR_SYNTAX',              -2);
+('MDB2_ERROR_CONSTRAINT',          -3);
+('MDB2_ERROR_NOT_FOUND',           -4);
+('MDB2_ERROR_ALREADY_EXISTS',      -5);
+('MDB2_ERROR_UNSUPPORTED',         -6);
+('MDB2_ERROR_MISMATCH',            -7);
+('MDB2_ERROR_INVALID',             -8);
+('MDB2_ERROR_NOT_CAPABLE',         -9);
+('MDB2_ERROR_TRUNCATED',          -10);
+('MDB2_ERROR_INVALID_NUMBER',     -11);
+('MDB2_ERROR_INVALID_DATE',       -12);
+('MDB2_ERROR_DIVZERO',            -13);
+('MDB2_ERROR_NODBSELECTED',       -14);
+('MDB2_ERROR_CANNOT_CREATE',      -15);
+('MDB2_ERROR_CANNOT_DELETE',      -16);
+('MDB2_ERROR_CANNOT_DROP',        -17);
+('MDB2_ERROR_NOSUCHTABLE',        -18);
+('MDB2_ERROR_NOSUCHFIELD',        -19);
+('MDB2_ERROR_NEED_MORE_DATA',     -20);
+('MDB2_ERROR_NOT_LOCKED',         -21);
+('MDB2_ERROR_VALUE_COUNT_ON_ROW', -22);
+('MDB2_ERROR_INVALID_DSN',        -23);
+('MDB2_ERROR_CONNECT_FAILED',     -24);
+('MDB2_ERROR_EXTENSION_NOT_FOUND',-25);
+('MDB2_ERROR_NOSUCHDB',           -26);
+('MDB2_ERROR_ACCESS_VIOLATION',   -27);
+('MDB2_ERROR_CANNOT_REPLACE',     -28);
+('MDB2_ERROR_CONSTRAINT_NOT_NULL',-29);
+('MDB2_ERROR_DEADLOCK',           -30);
+('MDB2_ERROR_CANNOT_ALTER',       -31);
+('MDB2_ERROR_MANAGER',            -32);
+('MDB2_ERROR_MANAGER_PARSE',      -33);
+('MDB2_ERROR_LOADMODULE',         -34);
+('MDB2_ERROR_INSUFFICIENT_DATA',  -35);
+
+DATAタイプ
+
+'text':
+'clob':
+'blob':
+'integer':
+'boolean':
+'date':
+'time':
+'timestamp':
+'float':
+'decimal':
+
+</pre>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Query.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/BEAR_Base.html#method_onInject" class="">onInject()</a><br />
+                                                                    <a href="../classes/BEAR_Base.html#method_setConfig" class="">setConfig()</a><br />
+                                                                    <a href="../classes/BEAR_Base.html#method_getConfig" class="">getConfig()</a><br />
+                                                                    <a href="../classes/BEAR_Base.html#method_setService" class="">setService()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_select" class="">select()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_insert" class="">insert()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_update" class="">update()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_delete" class="">delete()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_quote" class="">quote()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method_isError" class="">isError()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Base.html#method__exception" class="">_exception()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method__sort" class="">_sort()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method__countQuery" class="">_countQuery()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Base.html#property__config" class="">$_config</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/BEAR_Query.html#method__selectRow" class="">_selectRow()</a><br />
+                                                                    <a href="../classes/BEAR_Query.html#method__rewriteCountQuery" class="">_rewriteCountQuery()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Query.html"><div class="path-wrapper">Query.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">BEAR_Query</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/BEAR_Base.html">\BEAR_Base</a></div>
+                                                                                                    <div class="namespace-wrapper">\BEAR_Query</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/BEAR_Query_Interface.html"><div class="namespace-wrapper">\BEAR_Query_Interface</div></a></dd>
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                    <dd><a href="http://www.bear-project.net/"><div class="namespace-wrapper">http://www.bear-project.net/</div></a></dd>
+                                                    
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                category
+                            </th>
+                            <td>
+                                                                    <p>BEAR</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Akihito Koriyama <a href="mailto:koriyama@bear-project.net">koriyama@bear-project.net</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2008-2011 Akihito Koriyama  All rights reserved.</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="http://opensource.org/licenses/bsd-license.php">http://opensource.org/licenses/bsd-license.php</a> BSD</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                                                    <p>SVN: Release: @package_version@ $Id: Query.php 2552 2011-06-15 07:13:09Z koriyama@bear-project.net $</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                config
+                            </th>
+                            <td>
+                                                                    <p>MDB2    db          DBオブジェクト        *required</p>
+                                                                    <p>BEAR_Ro ro          リソースオブジェクト    *requi</p>
+                                                                    <p>string  table       テーブル名</p>
+                                                                    <p>int     pager       ページング</p>
+                                                                    <p>int     perPage     ページ毎のアイテム数</p>
+                                                                    <p>array   options     DBページャーオプション</p>
+                                                                    <p>bool    deleted_at  論理削除対応</p>
+                                                                    <p>array   sort        ソート</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__config" name="property__config" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_config</h3>
+                <pre class="signature">$_config : array</pre>
+                <p><em>Class config</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$config</span>) </pre>
+                <p><em>Constructor</em></p>
+                <p>設定を_configプロパティに代入します。</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td><p>ユーザー設定値</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onInject" name="method_onInject" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onInject()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onInject() : void</pre>
+                <p><em>Inject</em></p>
+                <p>設定にしたがってサービスをインジェクトします。</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setConfig" name="method_setConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setConfig(mixed  <span class="argument">$config</span>, mixed  <span class="argument">$values = null</span>) : self</pre>
+                <p><em>Set config</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$config </td>
+                                <td><p>(string) 設定キー | (array) 設定配列</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$values </td>
+                                <td><p>(string) $configの時の設定値</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    self
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConfig" name="method_getConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConfig(string  <span class="argument">$key = null</span>) : mixed</pre>
+                <p><em>Get config</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>設定キー、指定なければ全ての設定を取得</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setService" name="method_setService" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setService()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setService(string  <span class="argument">$name</span>, mixed  <span class="argument">$service</span>) : void</pre>
+                <p><em>Set service</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>サービスキー</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$service </td>
+                                <td><p>サービス</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_select" name="method_select" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">select()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">select(string  <span class="argument">$query</span>, array  <span class="argument">$params = array()</span>, array  <span class="argument">$values = null</span>, string  <span class="argument">$id = &#039;id&#039;</span>) : \BEAR_Ro</pre>
+                <p><em>セレクト</em></p>
+                <pre>
+通常のselect文の他にDB結果の一部だけをSELECTする機能と、HTMLページングの機能が合わさった
+メソッドです。getAll()メソッドの引数に加えて一画面に表示するデータ数を
+引数に指示するとページング(スライス）されたデータ結果と
+エージェントに合わせたリンクHTML文字列が返ります。
+$valuesが配列<array($key => $values)>ならWHERE $key1 = $id1 AND $key2 = $id2 ..と条件を作ってselectします。
+リソース内で受け取った$valuesを条件にSELETするときに使います。
+
+$paramsが空だと通常のSQL、連想配列が入っていると$queryをpreparedステートメート文として期待して実行します。
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$query </td>
+                                <td><p>SQL</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>プリペアードステートメントにする場合にバインドする変数</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td><p>where条件配列</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Ro.html">\BEAR_Ro</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insert" name="method_insert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insert(array  <span class="argument">$values</span>, null  <span class="argument">$table = null</span>, null  <span class="argument">$types = null</span>) : mixed|\mixeds</pre>
+                <p><em>インサート</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$table </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$types </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed|\mixeds
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_update" name="method_update" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">update()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">update(array  <span class="argument">$values</span>, string  <span class="argument">$where</span>, null  <span class="argument">$table = null</span>, null  <span class="argument">$types = null</span>) : mixed</pre>
+                <p><em>アップデート</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$where </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$table </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$types </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_delete" name="method_delete" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">delete()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">delete(  <span class="argument">$where</span>, null  <span class="argument">$table = null</span>) : mixed</pre>
+                <p><em>デリート</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$where </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$table </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_quote" name="method_quote" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">quote()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">quote(  <span class="argument">$value</span>,   <span class="argument">$type</span>) : mixed</pre>
+                <p><em>クオート</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$value </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$type </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isError" name="method_isError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isError(mixed  <span class="argument">$result</span>) : mixed</pre>
+                <p><em>エラー？</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$result </td>
+                                <td><p>DB結果</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__exception" name="method__exception" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_exception()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_exception(string  <span class="argument">$msg</span>, array  <span class="argument">$config = array()</span>) : \BEAR_Exception</pre>
+                <p><em>例外の作成</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$msg </td>
+                                <td><p>例外メッセージ</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td><p>例外config</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/BEAR_Exception.html">\BEAR_Exception</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BEAR_Base.html"><div class="path-wrapper">\BEAR_Base</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__sort" name="method__sort" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_sort()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_sort(string  <span class="argument">$sql</span>) : string</pre>
+                <p><em>ソート</em></p>
+                <p>クエリーからsort文を作成します。</p>
+<pre>
+exmaple 1.
+?_sort=id
+
+ORDER BY ID
+
+example 2.
+?_sort=id,-flg
+
+ORDER BY ID, FLG DESC
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sql </td>
+                                <td><p>DWL</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__countQuery" name="method__countQuery" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_countQuery()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_countQuery(string  <span class="argument">$query</span>, array  <span class="argument">$params = array()</span>) : integer</pre>
+                <p><em>カウントクエリー</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$query </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__selectRow" name="method__selectRow" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">_selectRow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_selectRow(  <span class="argument">$db</span>, string  <span class="argument">$query</span>, array  <span class="argument">$params</span>, array  <span class="argument">$values</span>, mixed  <span class="argument">$id</span>) : mixed</pre>
+                <p><em>Rowセレクト</em></p>
+                <p>$values配列に$idをキーにした変数があれば（単数、複数）それを=の条件としてwhereを作成してクエリーをRow取得する</p>
+<pre>
+example.
+
+$values = array('id'=>5)
+$id = 'id';
+
+だと"WHERE id = '5'"のクエリーが生成される
+
+$values = array('id'=>5, 'delete_flg'=>1)
+$id = array('id', 'delete_flg');
+
+だと"WHERE id = '5' AND delete_flg = '1'"のクエリーが生成される
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$db </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$query </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$values </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__rewriteCountQuery" name="method__rewriteCountQuery" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">_rewriteCountQuery()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_rewriteCountQuery(string  <span class="argument">$query</span>) : string</pre>
+                <p><em>カウントクエリーを生成する</em></p>
+                <pre>SQL文から"SELECT COUNT(*)" を付加したカウントクエリーを生成して返します。
+COUNT文を含まないSQLからセレクト結果の個数を知るためCOUNTのクエリーを使用するのに用います
+DBページャーで内部的にも使用されています。
+
+Example 1. SQLからCOUNT()を取得
+
+</pre>
+<p><code>
+$count_query = $this-&gt;getCountSQL($query));
+$total_items = $this-&gt;getOne($count_query, $params);
+</code></p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$query </td>
+                                <td><p>クエリー</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>書き換えられたクエリー | false（失敗</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            static
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Query.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Query.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 9th, 2015 at 16:05.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

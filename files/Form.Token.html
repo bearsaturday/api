@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">205</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-687900224"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-687900224" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/BEAR_Agent_Adapter_Interface.html">BEAR_Agent_Adapter_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_After_Interface.html">BEAR_Aspect_After_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Around_Interface.html">BEAR_Aspect_Around_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Before_Interface.html">BEAR_Aspect_Before_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Returning_Interface.html">BEAR_Aspect_Returning_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Aspect_Throwing_Interface.html">BEAR_Aspect_Throwing_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Base_Interface.html">BEAR_Base_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Form_Token_Interface.html">BEAR_Form_Token_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Injector_Interface.html">BEAR_Injector_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Page_Header_Interface.html">BEAR_Page_Header_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Query_Interface.html">BEAR_Query_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Resource_Request_Interface.html">BEAR_Resource_Request_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Interface.html">BEAR_Ro_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_Ro_Shutdown_Interface.html">BEAR_Ro_Shutdown_Interface</a></li>
+                                                    <li class="interface"><a href="../classes/BEAR_View_Interface.html">BEAR_View_Interface</a></li>
+                                                                                                    <li class="class"><a href="../classes/BEAR_Agent.html">BEAR_Agent</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter.html">BEAR_Agent_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Android.html">BEAR_Agent_Adapter_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Default.html">BEAR_Agent_Adapter_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Docomo.html">BEAR_Agent_Adapter_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ezweb.html">BEAR_Agent_Adapter_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Ipad.html">BEAR_Agent_Adapter_Ipad</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Iphone.html">BEAR_Agent_Adapter_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile.html">BEAR_Agent_Adapter_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Mobile_Exception.html">BEAR_Agent_Adapter_Mobile_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Adapter_Softbank.html">BEAR_Agent_Adapter_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Exception.html">BEAR_Agent_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Injector.html">BEAR_Agent_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Mobile.html">BEAR_Agent_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Agent_Ua.html">BEAR_Agent_Ua</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation.html">BEAR_Annotation</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Annotation_Exception.html">BEAR_Annotation_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect.html">BEAR_Aspect</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Exception.html">BEAR_Aspect_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_JoinPoint.html">BEAR_Aspect_JoinPoint</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver.html">BEAR_Aspect_Weaver</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Aspect_Weaver_Exception.html">BEAR_Aspect_Weaver_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Base.html">BEAR_Base</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Bin_Bear.html">BEAR_Bin_Bear</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache.html">BEAR_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter.html">BEAR_Cache_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Apc.html">BEAR_Cache_Adapter_Apc</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Lite.html">BEAR_Cache_Adapter_Lite</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Memcache.html">BEAR_Cache_Adapter_Memcache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Adapter_Void.html">BEAR_Cache_Adapter_Void</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Cache_Exception.html">BEAR_Cache_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji.html">BEAR_Emoji</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Emoji_Map.html">BEAR_Emoji_Map</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Exception.html">BEAR_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Factory.html">BEAR_Factory</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form.html">BEAR_Form</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Exception.html">BEAR_Form_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Android.html">BEAR_Form_Renderer_Android</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Default.html">BEAR_Form_Renderer_Default</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Docomo.html">BEAR_Form_Renderer_Docomo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Ezweb.html">BEAR_Form_Renderer_Ezweb</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Iphone.html">BEAR_Form_Renderer_Iphone</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Mobile.html">BEAR_Form_Renderer_Mobile</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Renderer_Softbank.html">BEAR_Form_Renderer_Softbank</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Form_Token.html">BEAR_Form_Token</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img.html">BEAR_Img</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter.html">BEAR_Img_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo.html">BEAR_Img_Adapter_Cairo</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Cairo_Exception.html">BEAR_Img_Adapter_Cairo_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD.html">BEAR_Img_Adapter_GD</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_GD_Exception.html">BEAR_Img_Adapter_GD_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick.html">BEAR_Img_Adapter_Magick</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Adapter_Magick_Exception.html">BEAR_Img_Adapter_Magick_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Img_Exception.html">BEAR_Img_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log.html">BEAR_Log</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Log_Test.html">BEAR_Log_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main.html">BEAR_Main</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Exception.html">BEAR_Main_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Main_Ua_Injector.html">BEAR_Main_Ua_Injector</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2.html">BEAR_Mdb2</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Mdb2_Exception.html">BEAR_Mdb2_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page.html">BEAR_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Ajax.html">BEAR_Page_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Cli.html">BEAR_Page_Cli</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Exception.html">BEAR_Page_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Page_Header.html">BEAR_Page_Header</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Pager.html">BEAR_Pager</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Prof.html">BEAR_Prof</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query.html">BEAR_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Query_Count.html">BEAR_Query_Count</a></li>
+                                                    <li class="class"><a href="../classes/Bear_Query_Free.html">Bear_Query_Free</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource.html">BEAR_Resource</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Exception.html">BEAR_Resource_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute.html">BEAR_Resource_Execute</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Adapter.html">BEAR_Resource_Execute_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Exception.html">BEAR_Resource_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_File.html">BEAR_Resource_Execute_File</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Function.html">BEAR_Resource_Execute_Function</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Http.html">BEAR_Resource_Execute_Http</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Mock.html">BEAR_Resource_Execute_Mock</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Null.html">BEAR_Resource_Execute_Null</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Page.html">BEAR_Resource_Execute_Page</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Execute_Ro.html">BEAR_Resource_Execute_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request.html">BEAR_Resource_Request</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Ajax.html">BEAR_Resource_Request_Ajax</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Cache.html">BEAR_Resource_Request_Cache</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Exception.html">BEAR_Resource_Request_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Request_Test.html">BEAR_Resource_Request_Test</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server.html">BEAR_Resource_Server</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Client.html">BEAR_Resource_Server_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Execute_Exception.html">BEAR_Resource_Server_Execute_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Resource_Server_Handler.html">BEAR_Resource_Server_Handler</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro.html">BEAR_Ro</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Container.html">BEAR_Ro_Container</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Debug.html">BEAR_Ro_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Exception.html">BEAR_Ro_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype.html">BEAR_Ro_Prototype</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Debug.html">BEAR_Ro_Prototype_Debug</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link.html">BEAR_Ro_Prototype_Link</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Prototype_Link_Exception.html">BEAR_Ro_Prototype_Link_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Ro_Shutdown.html">BEAR_Ro_Shutdown</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Session.html">BEAR_Session</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty.html">BEAR_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Smarty_Exception.html">BEAR_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Client.html">BEAR_Test_Client</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Test_Query.html">BEAR_Test_Query</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_Util.html">BEAR_Util</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View.html">BEAR_View</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter.html">BEAR_View_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Php.html">BEAR_View_Adapter_Php</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty.html">BEAR_View_Adapter_Smarty</a></li>
+                                                    <li class="class"><a href="../classes/BEAR_View_Adapter_Smarty_Exception.html">BEAR_View_Adapter_Smarty_Exception</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bcheckbox.html">HTML_QuickForm_bcheckbox</a></li>
+                                                    <li class="class"><a href="../classes/HTML_QuickForm_bradio.html">HTML_QuickForm_bradio</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content file">
+                    <nav>
+                                                                    </nav>
+
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+                    <h1><small>Form</small>Token.php</h1>
+                    <p><em>BEAR</em></p>
+                    <p>PHP versions 5</p>
+
+                    
+                    
+                                        <h2>Classes</h2>
+                    <table class="table table-hover">
+                                            <tr>
+                            <td><a href="../classes/BEAR_Form_Token.html">BEAR_Form_Token</a></td>
+                            <td><em>BEAR_Form_Token</em></td>
+                        </tr>
+                                        </table>
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                                                    <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\BEAR_Form</div></dd>
+                        
+                                                                                    <dt>See also</dt>
+                                                                                        <dd><a href="http://www.bear-project.net/"><div class="namespace-wrapper">http://www.bear-project.net/</div></a></dd>
+                                                    
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                                    <tr>
+                                <th>
+                                    category
+                                </th>
+                                <td>
+                                                                            <p>BEAR</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    author
+                                </th>
+                                <td>
+                                                                            <p>Akihito Koriyama <a href="mailto:koriyama@bear-project.net">koriyama@bear-project.net</a></p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    copyright
+                                </th>
+                                <td>
+                                                                            <p>2008-2011 Akihito Koriyama  All rights reserved.</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    license
+                                </th>
+                                <td>
+                                                                            <p><a href="http://opensource.org/licenses/bsd-license.php">http://opensource.org/licenses/bsd-license.php</a> BSD</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    version
+                                </th>
+                                <td>
+                                                                            <p>SVN: Release: @package_version@ $Id:$</p>
+                                                                    </td>
+                            </tr>
+                                            </table>
+
+                </aside>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label"></h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Form/Token.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 9th, 2015 at 16:05.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
